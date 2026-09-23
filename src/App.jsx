@@ -30,78 +30,79 @@ return <main className="min-h-screen bg-[#f5f2ea] text-[#13251f] selection:bg-[#
 <section id="services" className="mx-auto max-w-7xl px-5 py-24 md:px-8"><div className="mb-14 grid gap-5 md:grid-cols-2"><div><p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-[#39725c]">How I can help</p><h2 className="text-5xl font-black tracking-[-.05em] md:text-7xl">Bring me the<br/>messy brief.</h2></div><div className="max-w-md self-end"><p className="mb-5 text-lg text-[#13251f]/65">Whether you need a plan from scratch or extra capacity to get a project over the line, I provide practical communications support with a clear end product.</p><a href="#packages" className="inline-flex items-center font-bold text-[#39725c]">See packages and pricing <ChevronRight className="h-4 w-4"/></a></div></div><div className="grid border-t border-[#13251f]/20 md:grid-cols-2">{services.map((s,i)=><a href="#packages" key={s.n} className={`block border-b border-[#13251f]/20 py-9 md:p-9 ${i%2===0?"md:border-r":""}`}><div className="mb-10 text-xs font-black text-[#39725c]">{s.n}</div><h3 className="mb-4 text-2xl font-black">{s.title}</h3><p className="mb-5 text-[#13251f]/65">{s.copy}</p><p className="text-sm font-bold">{s.fit}</p></a>)}</div></section>
 <section id="packages" className="bg-[#13251f] py-24 text-white"><div className="mx-auto max-w-7xl px-5 md:px-8"><p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-[#d5ff68]">Packages & rates</p><h2 className="mb-12 text-5xl font-black tracking-[-.05em] md:text-7xl">A clear starting point.</h2><div className="grid gap-5 lg:grid-cols-3">{packages.map(p=><div key={p.name} className={`relative rounded-[2rem] border p-8 ${p.featured?"border-[#d5ff68] bg-[#f5f2ea] text-[#13251f]":"border-white/15 bg-white/5"}`}>{p.featured&&<span className="absolute right-6 top-6 rounded-full bg-[#d5ff68] px-3 py-1 text-xs font-black">POPULAR</span>}<p className="mb-3 text-xs font-black uppercase tracking-[.14em] text-[#78a944]">{p.kicker}</p><h3 className="text-3xl font-black">{p.name}</h3><div className="mb-5 mt-3 text-3xl font-black">{p.price}<span className="text-sm font-medium opacity-60"> starting price</span></div><p className="mb-7 opacity-70">{p.desc}</p><div className="mb-8 space-y-3">{p.includes.map(x=><div key={x} className="flex gap-3 text-sm font-semibold"><CheckCircle2 className="h-5 w-5 shrink-0 text-[#78a944]"/>{x}</div>)}</div><a target="_blank" rel="noreferrer" href={enquiryLink(`${p.name} package enquiry`,`Hi Morgan,\n\nI'm interested in your ${p.name} package. My project is:\n\nDesired timing:\n\nThanks,`)} className={`${btn} w-full ${p.featured?"bg-[#13251f] text-white":"bg-[#d5ff68] text-[#13251f]"}`}>Choose {p.name}<ArrowRight className="ml-2 h-4 w-4"/></a></div>)}</div><div className="mt-14 grid gap-8 rounded-[2rem] border border-white/15 p-8 md:grid-cols-2"><div><p className="mb-3 text-xs font-black uppercase tracking-[.14em] text-[#d5ff68]">Optional add-ons</p><h3 className="text-3xl font-black">Build the scope you actually need.</h3></div><div className="grid gap-3 sm:grid-cols-2">{addons.map(([n,p])=><a target="_blank" rel="noreferrer" key={n} href={enquiryLink(`${n} enquiry`,`Hi Morgan,\n\nI'd like to discuss adding ${n.toLowerCase()} to my project.\n\nProject details:\n`)} className="rounded-xl bg-white/5 p-4 hover:bg-white/10"><div className="font-bold">{n}</div><div className="mt-1 text-sm text-[#d5ff68]">{p}</div></a>)}</div></div></div></section>
 <section className="bg-[#f5f2ea] py-24 md:py-32">
-<div className="mx-auto max-w-7xl px-5 md:px-8">
-<div className="mb-14 grid gap-6 md:grid-cols-2">
-<div>
-<p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-[#39725c]">
-See what you'll receive
-</p>
- 
-<h2 className="text-5xl font-black tracking-[-.05em] md:text-7xl">
-From strategy to a usable plan.
-</h2>
-</div>
- 
-<p className="max-w-lg self-end text-lg leading-relaxed text-[#13251f]/65">
-Before starting a project, it's useful to know what the finished work
-could look like. Explore two illustrative examples showing how I
-structure practical communications and stakeholder engagement plans.
-</p>
-</div>
- 
-<div className="grid gap-5 md:grid-cols-2">
- 
-/samples/communications-plan-sample.pdf
-<div className="mb-16 text-xs font-black uppercase tracking-[.14em] text-[#39725c]">
-01 · Illustrative sample
-</div>
- 
-<h3 className="mb-4 text-3xl font-black tracking-[-.04em]">
-Communications Plan
-</h3>
- 
-<p className="mb-8 max-w-lg leading-relaxed text-[#13251f]/65">
-See how objectives, audiences, key messages, channels, tactics,
-risks and measurement come together in a practical communications
-roadmap.
-</p>
- 
-<span className="inline-flex items-center font-black text-[#39725c]">
-View sample
-<ExternalLink className="ml-2 h-4 w-4" />
-</span>
-</a>
- 
-/samples/stakeholder-engagement-plan-sample.pdf
-<div className="mb-16 text-xs font-black uppercase tracking-[.14em] text-[#d5ff68]">
-02 · Illustrative sample
-</div>
- 
-<h3 className="mb-4 text-3xl font-black tracking-[-.04em]">
-Stakeholder Engagement Plan
-</h3>
- 
-<p className="mb-8 max-w-lg leading-relaxed text-white/65">
-See how stakeholder mapping, prioritisation, engagement methods,
-issues, feedback and evaluation can be structured into an actionable
-engagement plan.
-</p>
- 
-<span className="inline-flex items-center font-black text-[#d5ff68]">
-View sample
-<ExternalLink className="ml-2 h-4 w-4" />
-</span>
-</a>
- 
-</div>
- 
-<p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-[#13251f]/50">
-Illustrative examples created to demonstrate my approach and deliverable
-structure. Client plans are tailored to each organisation, project,
-audience and stakeholder environment.
-</p>
- 
-</div>
+  <div className="mx-auto max-w-7xl px-5 md:px-8">
+    
+    <div className="mb-14 grid gap-6 md:grid-cols-2">
+      <div>
+        <p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-[#39725c]">
+          See what you'll receive
+        </p>
+
+        <h2 className="text-5xl font-black tracking-[-.05em] md:text-7xl">
+          From strategy to a usable plan.
+        </h2>
+      </div>
+
+      <p className="max-w-lg self-end text-lg leading-relaxed text-[#13251f]/65">
+        Before starting a project, it's useful to know what the finished work
+        could look like. Explore two illustrative examples showing how I
+        structure practical communications and stakeholder engagement plans.
+      </p>
+    </div>
+
+    <div className="grid gap-5 md:grid-cols-2">
+
+      /samples/communications-plan-sample.pdf
+        <div className="mb-16 text-xs font-black uppercase tracking-[.14em] text-[#39725c]">
+          01 · Illustrative sample
+        </div>
+
+        <h3 className="mb-4 text-3xl font-black tracking-[-.04em]">
+          Communications Plan
+        </h3>
+
+        <p className="mb-8 max-w-lg leading-relaxed text-[#13251f]/65">
+          See how objectives, audiences, key messages, channels, tactics,
+          risks and measurement come together in a practical communications
+          roadmap.
+        </p>
+
+        <span className="inline-flex items-center font-black text-[#39725c]">
+          View sample
+          <ExternalLink className="ml-2 h-4 w-4" />
+        </span>
+      </a>
+
+      /samples/stakeholder-engagement-plan-sample.pdf
+        <div className="mb-16 text-xs font-black uppercase tracking-[.14em] text-[#d5ff68]">
+          02 · Illustrative sample
+        </div>
+
+        <h3 className="mb-4 text-3xl font-black tracking-[-.04em]">
+          Stakeholder Engagement Plan
+        </h3>
+
+        <p className="mb-8 max-w-lg leading-relaxed text-white/65">
+          See how stakeholder mapping, prioritisation, engagement methods,
+          issues, feedback and evaluation can be structured into an actionable
+          engagement plan.
+        </p>
+
+        <span className="inline-flex items-center font-black text-[#d5ff68]">
+          View sample
+          <ExternalLink className="ml-2 h-4 w-4" />
+        </span>
+      </a>
+
+    </div>
+
+    <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-[#13251f]/50">
+      Illustrative examples created to demonstrate my approach and deliverable
+      structure. Client plans are tailored to each organisation, project,
+      audience and stakeholder environment.
+    </p>
+
+  </div>
 </section>
 <section id="work" className="bg-[#dce5d6] py-24"><div className="mx-auto max-w-7xl px-5 md:px-8"><div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><p className="mb-3 text-xs font-black uppercase tracking-[.18em] text-[#39725c]">Selected work</p><h2 className="text-5xl font-black md:text-7xl">Proof, not promises.</h2></div><div className="flex flex-wrap gap-2">{filters.map(f=><button onClick={()=>setFilter(f)} key={f} className={`rounded-full px-4 py-2 text-xs font-bold ${filter===f?"bg-[#13251f] text-white":"border border-[#13251f]/20"}`}>{f}</button>)}</div></div><div className="grid gap-5 md:grid-cols-2">{visible.map(p=><div key={p.title} className="flex flex-col rounded-[2rem] bg-[#f5f2ea] p-8"><p className="mb-12 text-xs font-black uppercase text-[#39725c]">{p.type}</p><h3 className="mb-4 text-3xl font-black">{p.title}</h3><p className="mb-7 flex-1 text-[#13251f]/65">{p.teaser}</p><button onClick={()=>setActive(p)} className="inline-flex items-center self-start font-black text-[#39725c]">Read case study <ArrowRight className="ml-2 h-4 w-4"/></button></div>)}</div></div></section>
 <section id="about" className="mx-auto grid max-w-7xl gap-12 px-5 py-24 md:grid-cols-12 md:px-8"><div className="md:col-span-4"><p className="text-xs font-black uppercase tracking-[.18em] text-[#39725c]">Why work with me</p></div><div className="md:col-span-8"><h2 className="mb-10 text-4xl font-black md:text-6xl">Strategy when you need direction. Delivery when you need things done.</h2><p className="max-w-3xl leading-relaxed text-[#13251f]/65">My background spans communications, stakeholder and community engagement, infrastructure projects, public campaigns and content. I work comfortably with technical teams, stakeholders and competing priorities, then turn the complexity into something useful for the audience.</p></div></section>
